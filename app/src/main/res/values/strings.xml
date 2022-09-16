@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TryBluetoothApp</string>
+    <string name="there_is_no_messages_yet">There is no messages yet</string>
+    <string name="non_active_info_message">Non Active</string>
+    <string name="connecting_info_message">Connecting</string>
+    <string name="connected_info_message">Connected</string>
+    <string name="failed_info_message">Failed</string>
+</resources>
