@@ -73,8 +73,10 @@ class ChatFragment : BaseFragment<FragmentChatBinding>(FragmentChatBinding::infl
                 is MessagesStatus.MessageExists -> {
                     binding.textNoMessages.visibility = View.GONE
                     adapter.submitList(messageStatus.data)
-                    adapter.notifyDataSetChanged()
                     binding.rvListMessages.smoothScrollToPosition(messageStatus.data.size)
+                }
+                else -> {
+                    binding.textNoMessages.visibility = View.VISIBLE
                 }
             }
         }

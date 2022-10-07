@@ -65,7 +65,7 @@ class MessagesListAdapter(
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Message>() {
             override fun areItemsTheSame(oldItem: Message, newItem: Message): Boolean =
-                (oldItem.fromUser + oldItem.message) == (newItem.fromUser + newItem.message)
+                oldItem.id == newItem.id
             override fun areContentsTheSame(oldItem: Message, newItem: Message): Boolean =
                 oldItem == newItem
         }

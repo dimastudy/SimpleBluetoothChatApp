@@ -9,6 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 
+/*
 @Module
 @InstallIn(SingletonComponent::class)
 object UseCasesModule {
@@ -73,4 +74,4 @@ object UseCasesModule {
     ) : MessagesWorkUseCase = MessagesWorkUseCase(saveMessageUseCase, removeMessageUseCase, updateMessageUseCase, getSavedMessagesUseCase)
 
 
-}
+}*/

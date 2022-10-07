@@ -4,15 +4,19 @@ import android.bluetooth.*
 import android.content.Context
 import android.util.Log
 import com.justadroiddev.trybluetoothapp.presentation.ChatCallback
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class BaseBluetoothService(
-    private val context: Context,
+
+class BaseBluetoothService @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val stateBluetoothDataToUiMapper: StateBluetoothDataToUiMapper
 ) : BluetoothService {
 

@@ -3,6 +3,7 @@ package com.justadroiddev.trybluetoothapp.di
 import com.justadroiddev.trybluetoothapp.data.*
 import com.justadroiddev.trybluetoothapp.data.database.BaseMessageToEntityMapper
 import com.justadroiddev.trybluetoothapp.presentation.BaseStateBluetoothDataToUiMapper
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,22 +12,26 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object MappersModule {
+abstract class MappersModule {
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideMessageToEntityMapper() : MessageToEntityMapper =
-        BaseMessageToEntityMapper()
+    abstract fun bindMessageToEntityMapper(
+        mapper: BaseMessageToEntityMapper
+    ) : MessageToEntityMapper
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideMessageEntityToDataMapper() : MessageEntityToDataMapper =
-        BaseMessageEntityToDataMapper()
+    abstract fun bindMessageEntityToDataMapper(
+        mapper: BaseMessageEntityToDataMapper
+    ) : MessageEntityToDataMapper
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideStateBluetoothDataToUiMapper(resourceManager: ResourceManager) : StateBluetoothDataToUiMapper =
-        BaseStateBluetoothDataToUiMapper(resourceManager)
+    abstract fun bindStateBluetoothDataToUiMapper(
+        mapper : BaseStateBluetoothDataToUiMapper
+    ) : StateBluetoothDataToUiMapper
+
 
 
 }

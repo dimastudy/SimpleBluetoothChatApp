@@ -1,6 +1,8 @@
 package com.justadroiddev.trybluetoothapp.domain.usecases
 
-data class MessagesWorkUseCase(
+import javax.inject.Inject
+
+data class MessagesWorkUseCase @Inject constructor(
     val saveMessageUseCase: SaveMessageUseCase,
     val removeMessageUseCase: RemoveMessageUseCase,
     val updateMessageUseCase: UpdateMessageUseCase,

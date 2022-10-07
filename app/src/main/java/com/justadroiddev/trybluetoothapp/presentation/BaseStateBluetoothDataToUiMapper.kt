@@ -4,8 +4,9 @@ import android.util.Log
 import com.justadroiddev.trybluetoothapp.data.Message
 import com.justadroiddev.trybluetoothapp.data.ResourceManager
 import com.justadroiddev.trybluetoothapp.data.StateBluetoothDataToUiMapper
+import javax.inject.Inject
 
-class BaseStateBluetoothDataToUiMapper(
+class BaseStateBluetoothDataToUiMapper @Inject constructor(
     private val resourceManager: ResourceManager
 ) : StateBluetoothDataToUiMapper {
     override fun map(infoTextId: Int, canWrite: Boolean): StateBluetoothUi =

@@ -4,8 +4,9 @@ import android.util.Log
 import com.justadroiddev.trybluetoothapp.data.database.CacheDataSource
 import com.justadroiddev.trybluetoothapp.domain.Repository
 import com.justadroiddev.trybluetoothapp.presentation.ChatCallback
+import javax.inject.Inject
 
-class ChatRepository(
+class ChatRepository @Inject constructor(
     private val cacheDataSource: CacheDataSource,
     private val bluetoothService: BluetoothService,
     private val messageToEntityMapper: MessageToEntityMapper,

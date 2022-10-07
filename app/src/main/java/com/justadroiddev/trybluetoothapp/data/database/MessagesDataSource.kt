@@ -2,8 +2,9 @@ package com.justadroiddev.trybluetoothapp.data.database
 
 import android.util.Log
 import com.justadroiddev.trybluetoothapp.data.MessageEntityToDataMapper
+import javax.inject.Inject
 
-class MessagesDataSource(
+class MessagesDataSource @Inject constructor(
     private val database: ChatDatabase,
     private val messageEntityToDataMapper: MessageEntityToDataMapper
 ) : CacheDataSource {
